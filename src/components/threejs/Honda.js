@@ -12,7 +12,7 @@ import { useFrame } from "@react-three/fiber";
 import { hostname } from '../../datas/Variables'
 
 export function Honda(props) {
-  const { nodes, materials } = useGLTF(hostname + "/honda.glb");
+  const { nodes, materials } = useGLTF(hostname + "honda.glb");
   const motoRef = useRef(null);
 
   useFrame(() => {
@@ -83,4 +83,4 @@ export function Honda(props) {
   );
 }
 
-useGLTF.preload(hostname + "/honda.glb");
+useGLTF.preload(hostname + "honda.glb");

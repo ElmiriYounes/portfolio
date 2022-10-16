@@ -40,4 +40,4 @@ export function Soccer(props) {
   )
 }
 
-useGLTF.preload(hostname + '/soccer_ball.glb')
+useGLTF.preload(hostname + 'soccer_ball.glb')
