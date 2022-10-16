@@ -12,7 +12,12 @@ const App: FC = () => {
       <Navbar setCurrentPath={setCurrentPath} currentPath={currentPath} />
       <Cursor />
       <Routes>
-        <Route path="/" element={<View currentPath={currentPath} setCurrentPath={setCurrentPath} />} />
+        <Route
+          path={window.location.pathname === "localhost" ? "/" : "portfolio/"}
+          element={
+            <View currentPath={currentPath} setCurrentPath={setCurrentPath} />
+          }
+        />
         {/* <Route path="/about-me" element={<About />} /> */}
       </Routes>
     </Router>

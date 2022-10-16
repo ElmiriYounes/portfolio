@@ -11,7 +11,8 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 
 export function Honda(props) {
-  const { nodes, materials } = useGLTF('/honda.glb')
+  const pathGlb = window.location.pathname === "localhost" ? "/honda.glb" : "portfolio/honda.glb";
+  const { nodes, materials } = useGLTF(pathGlb)
   const motoRef = useRef(null);
 
   useFrame(() => {
@@ -43,4 +44,4 @@ export function Honda(props) {
   )
 }
 
-useGLTF.preload('/honda.glb')
+useGLTF.preload(pathGlb)
