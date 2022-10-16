@@ -7,7 +7,6 @@ import View from "./pages/View";
 import { hostname } from "./datas/Variables";
 
 const App: FC = () => {
-  console.log(window.location.pathname);
   
   const [currentPath, setCurrentPath] = useState<string>("home");
   return (

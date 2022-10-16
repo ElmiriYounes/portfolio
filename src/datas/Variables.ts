@@ -1,1 +1,1 @@
-export const hostname = window.location.pathname === "localhost" ? "/" : "/portfolio/";
+export const hostname:string = window.location.hostname === "localhost" ? "/" : "/portfolio/";
