@@ -1,0 +1,1 @@
+export const hostname = window.location.pathname === "localhost" ? "/" : "portfolio/";

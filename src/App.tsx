@@ -4,6 +4,7 @@ import { Canvas, extend } from "@react-three/fiber";
 import Navbar from "./components/navbar/Navbar";
 import Cursor from "./components/cursor/Cursor";
 import View from "./pages/View";
+import { hostname } from "./datas/Variables";
 
 const App: FC = () => {
   const [currentPath, setCurrentPath] = useState<string>("home");
@@ -13,7 +14,7 @@ const App: FC = () => {
       <Cursor />
       <Routes>
         <Route
-          path={window.location.pathname === "localhost" ? "/" : "portfolio/"}
+          path={hostname}
           element={
             <View currentPath={currentPath} setCurrentPath={setCurrentPath} />
           }

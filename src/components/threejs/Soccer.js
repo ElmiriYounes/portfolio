@@ -9,12 +9,11 @@ title: Soccer ball
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { hostname } from '../../datas/Variables'
 
 export function Soccer(props) {
-  let pathGlb;
-  window.location.pathname === "localhost" ? pathGlb = "/soccer_ball.glb" : pathGlb = "portfolio/soccer_ball.glb";
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF(pathGlb)
+  const { nodes, materials, animations } = useGLTF(hostname + 'soccer_ball.glb')
   const { actions } = useAnimations(animations, group)
   const ballRef = useRef(null);
 
@@ -41,4 +40,4 @@ export function Soccer(props) {
   )
 }
 
-useGLTF.preload(pathGlb)
+useGLTF.preload(hostname + '/soccer_ball.glb')
