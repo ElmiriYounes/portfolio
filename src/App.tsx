@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Canvas, extend } from "@react-three/fiber";
+import Navbar from "./components/navbar/Navbar";
+import Cursor from "./components/cursor/Cursor";
+import View from "./pages/View";
 
-function App() {
+const App: FC = () => {
+  const [currentPath, setCurrentPath] = useState<string>("home");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar setCurrentPath={setCurrentPath} currentPath={currentPath} />
+      <Cursor />
+      <Routes>
+        <Route path="/" element={<View currentPath={currentPath} setCurrentPath={setCurrentPath} />} />
+        {/* <Route path="/about-me" element={<About />} /> */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
