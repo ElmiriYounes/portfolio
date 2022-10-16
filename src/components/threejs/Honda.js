@@ -6,42 +6,80 @@ source: https://sketchfab.com/3d-models/honda-shadow-rs-2010-2e7cf7bc195044f4a0f
 title: Honda Shadow RS 2010
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber';
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 
 export function Honda(props) {
-  const pathGlb = window.location.pathname === "localhost" ? "/honda.glb" : "portfolio/honda.glb";
-  const { nodes, materials } = useGLTF(pathGlb)
+  const { nodes, materials } = useGLTF(hostname + "/honda.glb");
   const motoRef = useRef(null);
 
   useFrame(() => {
-    if(motoRef !== null) motoRef.current.rotation.y += 0.01;
+    if (motoRef !== null) motoRef.current.rotation.y += 0.01;
   });
 
   return (
     <group {...props} dispose={null} ref={motoRef}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={3} position={[0,-1.5,0]}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials.Honda_Shadow_RS_2010_by_Alex_Ka} />
-        <mesh geometry={nodes.Object_3.geometry} material={materials.aluminiumdetails} />
-        <mesh geometry={nodes.Object_4.geometry} material={materials.black_chrome} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.black_mate} />
-        <mesh geometry={nodes.Object_6.geometry} material={materials.black_plastic} />
-        <mesh geometry={nodes.Object_7.geometry} material={materials.brakelight} />
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={3} position={[0, -1.5, 0]}>
+        <mesh
+          geometry={nodes.Object_2.geometry}
+          material={materials.Honda_Shadow_RS_2010_by_Alex_Ka}
+        />
+        <mesh
+          geometry={nodes.Object_3.geometry}
+          material={materials.aluminiumdetails}
+        />
+        <mesh
+          geometry={nodes.Object_4.geometry}
+          material={materials.black_chrome}
+        />
+        <mesh
+          geometry={nodes.Object_5.geometry}
+          material={materials.black_mate}
+        />
+        <mesh
+          geometry={nodes.Object_6.geometry}
+          material={materials.black_plastic}
+        />
+        <mesh
+          geometry={nodes.Object_7.geometry}
+          material={materials.brakelight}
+        />
         <mesh geometry={nodes.Object_8.geometry} material={materials.chrome} />
-        <mesh geometry={nodes.Object_9.geometry} material={materials.chromedetails} />
-        <mesh geometry={nodes.Object_10.geometry} material={materials.headlight} />
+        <mesh
+          geometry={nodes.Object_9.geometry}
+          material={materials.chromedetails}
+        />
+        <mesh
+          geometry={nodes.Object_10.geometry}
+          material={materials.headlight}
+        />
         <mesh geometry={nodes.Object_11.geometry} material={materials.hondaF} />
         <mesh geometry={nodes.Object_12.geometry} material={materials.hondaR} />
-        <mesh geometry={nodes.Object_13.geometry} material={materials.matedetails} />
-        <mesh geometry={nodes.Object_14.geometry} material={materials.mirrors} />
-        <mesh geometry={nodes.Object_15.geometry} material={materials.plasticdetails} />
-        <mesh geometry={nodes.Object_16.geometry} material={materials.sidereflectors} />
-        <mesh geometry={nodes.Object_17.geometry} material={materials.spdglass} />
+        <mesh
+          geometry={nodes.Object_13.geometry}
+          material={materials.matedetails}
+        />
+        <mesh
+          geometry={nodes.Object_14.geometry}
+          material={materials.mirrors}
+        />
+        <mesh
+          geometry={nodes.Object_15.geometry}
+          material={materials.plasticdetails}
+        />
+        <mesh
+          geometry={nodes.Object_16.geometry}
+          material={materials.sidereflectors}
+        />
+        <mesh
+          geometry={nodes.Object_17.geometry}
+          material={materials.spdglass}
+        />
         <mesh geometry={nodes.Object_18.geometry} material={materials.tire} />
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload(pathGlb)
+useGLTF.preload(hostname + "/honda.glb");

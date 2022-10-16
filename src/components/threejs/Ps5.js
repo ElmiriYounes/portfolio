@@ -11,11 +11,10 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export function Ps5(props) {
-  const pathGlb = window.location.pathname === "localhost" ? "/ps5.glb" : "portfolio/ps5.glb";
-  const { nodes, materials } = useGLTF(pathGlb);
+  const { nodes, materials } = useGLTF(hostname + "/ps5.glb");
   const ps5Ref = useRef(null);
   useFrame(() => {
-    if(ps5Ref !== null) ps5Ref.current.rotation.y += 0.01;
+    if (ps5Ref !== null) ps5Ref.current.rotation.y += 0.01;
   });
   return (
     <group {...props} dispose={null} ref={ps5Ref}>
@@ -57,4 +56,4 @@ export function Ps5(props) {
   );
 }
 
-useGLTF.preload(pathGlb);
+useGLTF.preload(hostname + "/ps5.glb");

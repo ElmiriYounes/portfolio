@@ -16,9 +16,8 @@ import { flexCenter, primaryColor } from "../../Global.styles";
 
 
 const Skin = (props) => {
-  const pathGlb = window.location.pathname === "localhost" ? "/skin.glb" : "portfolio/skin.glb";
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(pathGlb);
+  const { nodes, materials, animations } = useGLTF(hostname + "/skin.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -99,6 +98,6 @@ const Skin = (props) => {
   );
 };
 
-useGLTF.preload(pathGlb);
+useGLTF.preload(hostname + "/skin.glb");
 
 export default Skin;
