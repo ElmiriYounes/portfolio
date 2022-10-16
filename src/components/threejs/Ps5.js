@@ -12,7 +12,7 @@ import { useFrame } from "@react-three/fiber";
 import { hostname } from '../../datas/Variables'
 
 export function Ps5(props) {
-  const { nodes, materials } = useGLTF(hostname + "ps5.glb");
+  const { nodes, materials } = useGLTF("/ps5.glb");
   const ps5Ref = useRef(null);
   useFrame(() => {
     if (ps5Ref !== null) ps5Ref.current.rotation.y += 0.01;
@@ -57,4 +57,4 @@ export function Ps5(props) {
   );
 }
 
-useGLTF.preload(hostname + "ps5.glb");
+useGLTF.preload("/ps5.glb");

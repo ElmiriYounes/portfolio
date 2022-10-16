@@ -13,7 +13,7 @@ import { hostname } from '../../datas/Variables'
 
 export function Soccer(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF(hostname + 'soccer_ball.glb')
+  const { nodes, materials, animations } = useGLTF('/soccer_ball.glb')
   const { actions } = useAnimations(animations, group)
   const ballRef = useRef(null);
 
@@ -40,4 +40,4 @@ export function Soccer(props) {
   )
 }
 
-useGLTF.preload(hostname + 'soccer_ball.glb')
+useGLTF.preload('/soccer_ball.glb')

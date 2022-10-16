@@ -18,7 +18,7 @@ import { flexCenter, primaryColor } from "../../Global.styles";
 
 const Skin = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(hostname + "skin.glb");
+  const { nodes, materials, animations } = useGLTF("/skin.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -99,6 +99,6 @@ const Skin = (props) => {
   );
 };
 
-useGLTF.preload(hostname + "skin.glb");
+useGLTF.preload("/skin.glb");
 
 export default Skin;
