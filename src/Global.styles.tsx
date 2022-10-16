@@ -39,6 +39,7 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     scroll-behavior: smooth;
     height: 100%;
+    width: 100%;
   }
 
   body{

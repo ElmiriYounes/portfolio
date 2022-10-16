@@ -3,11 +3,11 @@ import { flexCenter, SubTitle } from '../../Global.styles'
 
 export const Hobbies = styled.div`
     ${flexCenter}
-    justify-content: space-between;
+    flex-wrap: wrap;
 
     .canvas{
-        background-color: lightcoral;
         width: 100px !important;
+        margin: 20px 20px 0 20px !important;
     }
 
     .canvas:last-child{
