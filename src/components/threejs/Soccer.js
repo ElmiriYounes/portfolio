@@ -11,7 +11,8 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 export function Soccer(props) {
-  const pathGlb = window.location.pathname === "localhost" ? "/soccer_ball.glb" : "portfolio/soccer_ball.glb";
+  let pathGlb;
+  window.location.pathname === "localhost" ? pathGlb = "/soccer_ball.glb" : pathGlb = "portfolio/soccer_ball.glb";
   const group = useRef()
   const { nodes, materials, animations } = useGLTF(pathGlb)
   const { actions } = useAnimations(animations, group)
