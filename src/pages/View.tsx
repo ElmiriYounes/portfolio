@@ -15,7 +15,7 @@ interface ViewProps {
 const View: FC<ViewProps> = (props) => {
   return (
     <Page>
-      <Container>
+      <Container>kl
         {props.currentPath === "home" && (
           <Hero setCurrentPath={props.setCurrentPath} />
         )}
