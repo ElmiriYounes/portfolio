@@ -9,6 +9,7 @@ title: Honda Shadow RS 2010
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { hostname } from '../../datas/Variables'
 
 export function Honda(props) {
   const { nodes, materials } = useGLTF(hostname + "/honda.glb");

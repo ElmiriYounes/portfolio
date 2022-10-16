@@ -11,6 +11,7 @@ import { useGLTF, useAnimations, Html, OrbitControls } from "@react-three/drei";
 import styled from "styled-components";
 import AnimSphere from "./AnimSphere";
 import { BiLoader } from "react-icons/bi";
+import { hostname } from '../../datas/Variables'
 import { flexCenter, primaryColor } from "../../Global.styles";
 
 
