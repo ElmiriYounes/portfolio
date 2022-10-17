@@ -1,5 +1,6 @@
-import styled, { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 import Roboto from "./fonts/Roboto/Roboto-Regular.ttf";
+import background from './assets/images/Background.png'
 
 export const flexCenter = css`
   display: flex;
@@ -39,7 +40,6 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     scroll-behavior: smooth;
     height: 100%;
-    width: 100%;
   }
 
   body{
@@ -69,8 +69,15 @@ const GlobalStyle = createGlobalStyle`
   p{
     line-height: 30px;
     color: #b8b8b8;
+    display: inline-block;
   }
 `;
+
+const stretching = keyframes`
+  to{
+
+  }
+`
 
 export const SubTitle = styled.h2`
   font-size: 2rem;
@@ -80,19 +87,34 @@ export const SubTitle = styled.h2`
   margin-left: 70px;
   color: white;
 
+  @media screen and (max-width: 498px) {
+      font-size: 1.5rem;
+  }
+
   span {
     color: ${primaryColor};
     font-size: 2rem;
     font-weight: bold;
+
+    @media screen and (max-width: 498px) {
+      font-size: 1.5rem;
+  }
   }
 
   &::before {
     position: absolute;
     content: "";
     width: 50px;
-    height: 50px;
+    height: 0;
     background-color: ${primaryColor};
     left: -70px;
+    animation: stretching 0.5s 0.5s ease-out forwards;
+
+    @keyframes stretching {
+      to {
+        height: 50px;
+      }
+    }
   }
 `;
 
@@ -117,6 +139,10 @@ export const Page = styled.div`
   min-height: calc(100vh - 84px);
   padding: 50px 20px;
   ${flexCenter}
+  background: url(${background});
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
 export default GlobalStyle;

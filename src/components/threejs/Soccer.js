@@ -17,9 +17,9 @@ export function Soccer(props) {
   const { actions } = useAnimations(animations, group)
   const ballRef = useRef(null);
 
-  useFrame(() => {
-    if(ballRef !== null) ballRef.current.rotation.y += 0.01;
-  });
+  // useFrame(() => {
+  //   if(ballRef !== null) ballRef.current.rotation.y += 0.01;
+  // });
 
   return (
     <group ref={ballRef} {...props} dispose={null}>

@@ -15,13 +15,13 @@ export function Honda(props) {
   const { nodes, materials } = useGLTF(hostname + "honda.glb");
   const motoRef = useRef(null);
 
-  useFrame(() => {
-    if (motoRef !== null) motoRef.current.rotation.y += 0.01;
-  });
+  // useFrame(() => {
+  //   if (motoRef !== null) motoRef.current.rotation.y += 0.01;
+  // });
 
   return (
     <group {...props} dispose={null} ref={motoRef}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={3} position={[0, -1.5, 0]}>
+      <group rotation={[-Math.PI / 2, 0, -1.3]} scale={4.5} position={[1, -2.5, 0]}>
         <mesh
           geometry={nodes.Object_2.geometry}
           material={materials.Honda_Shadow_RS_2010_by_Alex_Ka}

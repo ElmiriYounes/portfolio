@@ -3,8 +3,6 @@ import { flexCenter, primaryColor } from "../../Global.styles";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { CgArrowLongRight } from "react-icons/cg";
 
-
-
 const scaling = keyframes`
   to{
     transform: scale(1) rotate(0);
@@ -48,7 +46,7 @@ export const LinkedinIcon = styled(BsLinkedin)`
 export const GithubIcon = styled(BsGithub)`
   ${styleSocialIcons}
   transform: scale(0) rotate(720deg);
-  opacity:0;
+  opacity: 0;
   animation: ${scaling} 0.3s 2s ease-out forwards;
 `;
 
@@ -64,7 +62,6 @@ const showing = keyframes`
     opacity: 1;
   }
 `;
-
 
 export const Title = styled.h1`
   font-size: 4rem;
@@ -82,12 +79,18 @@ export const Title = styled.h1`
 
   span:nth-child(2) {
     color: ${primaryColor};
-    animation: ${showing} 0.3s .8s ease-out forwards;
+    animation: ${showing} 0.3s 0.8s ease-out forwards;
   }
 
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: 320px) {
     span {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 498px) {
+    span {
+      font-size: 2rem;
     }
   }
 `;
@@ -100,6 +103,7 @@ export const Jumbotron = styled.div`
   color: white;
   margin-left: 120px;
   position: relative;
+  z-index: 0;
 
   &::before {
     position: absolute;
@@ -151,10 +155,18 @@ export const Jumbotron = styled.div`
     opacity: 0;
     animation: ${showing} 0.3s 1.4s ease-out forwards;
 
+    @media screen and (max-width: 320px) {
+      font-size: 1.2rem;
+    }
+
     & > span {
       color: ${primaryColor};
       font-size: 1.5rem;
       font-weight: bold;
+
+      @media screen and (max-width: 320px) {
+        font-size: 1.2rem;
+      }
     }
 
     &:hover ${ArrowLongRight} {

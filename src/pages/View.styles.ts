@@ -9,6 +9,7 @@ export const Robot = styled(Canvas)`
 
 export const Dialog = styled.div`
   ${flexCenter}
+  display: none;
   position: absolute;
   z-index: -1;
   background-color: ${primaryColor};
@@ -44,7 +45,7 @@ export const RobotWrap = styled.div`
   position: relative;
   ${flexCenter}
 
-  @media screen and (max-width: 1050px){
+  @media screen and (max-width: 1050px) {
     display: none;
   }
 `;

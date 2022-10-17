@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import React, { FC, Suspense } from "react";
 import About from "../components/about/About";
 import Hero from "../components/hero/Hero";
+import Skills from "../components/skills/Skills";
 import Skin from "../components/threejs/Skin";
 import { Container, Page } from "../Global.styles";
 import { Robot, Dialog, RobotWrap } from "./View.styles";
@@ -20,6 +21,7 @@ const View: FC<ViewProps> = (props) => {
           <Hero setCurrentPath={props.setCurrentPath} />
         )}
         {props.currentPath === "about" && <About />}
+        {props.currentPath === "skills" && <Skills />}
         <RobotWrap>
           <Robot className="canvas" style={{ height: "600px" }}>
             <ambientLight intensity={0.5} />

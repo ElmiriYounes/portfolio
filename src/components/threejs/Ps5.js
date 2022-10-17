@@ -6,23 +6,25 @@ source: https://sketchfab.com/3d-models/ps5-d788de3735964151a3e24fd59c0f1956
 title: PS5
 */
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { hostname } from '../../datas/Variables'
+import { hostname } from "../../datas/Variables";
 
 export function Ps5(props) {
   const { nodes, materials } = useGLTF(hostname + "ps5.glb");
   const ps5Ref = useRef(null);
-  useFrame(() => {
-    if (ps5Ref !== null) ps5Ref.current.rotation.y += 0.01;
-  });
+
+  // useFrame(() => {
+  //   if (ps5Ref !== null) ps5Ref.current.rotation.y += 0.01;
+  // });
+
   return (
     <group {...props} dispose={null} ref={ps5Ref}>
       <group
         position={[0, -2.35, 0]}
-        rotation={[-1.57, 0, 0]}
-        scale={[2.5, 2.5, 2.5]}
+        rotation={[-1.57, 0, 2]}
+        scale={[2.8, 2.8, 2.8]}
       >
         <mesh
           geometry={nodes.Object_2.geometry}
