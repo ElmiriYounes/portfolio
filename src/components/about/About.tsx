@@ -2,9 +2,6 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { FC, Suspense } from "react";
 import { SubTitle } from "../../Global.styles";
-import { Honda } from "../threejs/Honda";
-import { Ps5 } from "../threejs/Ps5";
-import { Soccer } from "../threejs/Soccer";
 import { AboutWrap, BallIcon, GamingIcon, HelmetIcon, Hobbies, Hobby } from "./About.styles";
 
 const About: FC = () => {

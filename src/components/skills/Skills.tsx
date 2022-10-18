@@ -10,14 +10,7 @@ const Skills: FC = () => {
     <SkillsWrap>
       {skills.map((skill: any, index: number) => (
         <Skill key={index}>
-          <Canvas className="canvas">
-            <ambientLight intensity={0.35} />
-            <directionalLight position={[10, 2, 5]} intensity={0.3} />
-            <Suspense fallback={null}>
-              <Box texture={skill.img}/>
-            </Suspense>
-            <OrbitControls enableZoom={false} enableRotate={true} />
-          </Canvas>
+          {skill.img}
           <SkillTitle>{skill.title}</SkillTitle>
         </Skill>
       ))}

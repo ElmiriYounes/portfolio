@@ -10,10 +10,10 @@ const Box = (props) => {
   const boxRef = useRef();
 
   return (
-    <mesh ref={boxRef} position={[0,0,0]} rotation={[0, 2.5, 0]} scale={[3.5,3.5,3.5]}>
-        <boxGeometry castShadow receiveShadow attach="geometry"/>
-        <meshLambertMaterial map={colorMap} attach="material" args={[3, 3, 3]} />
-    </mesh>
+    <Sphere visible args={[2.5, 80, 200]}>
+        <MeshDistortMaterial attach="material" color="rgb(165, 10, 54)" distort={0} speed={0} roughness={2} />
+        <meshLambertMaterial map={colorMap} attach="material" />
+      </Sphere>
   );
 };
 

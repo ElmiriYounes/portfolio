@@ -1,7 +1,6 @@
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { FC, Suspense } from "react";
-import { Atom } from "../threejs/Atom";
 import Box from "../threejs/Box";
 import { SubTitle, Wrap } from "./About.styles";
 import textureBecode from "../../assets/images/becode.png";

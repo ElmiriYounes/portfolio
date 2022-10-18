@@ -3,7 +3,6 @@ import { flexCenter, primaryColor } from '../../Global.styles'
 
 export const SkillTitle = styled.span`
     ${flexCenter}
-    font-size: 1.5rem;
     color: white;
 `
 
