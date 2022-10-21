@@ -34,6 +34,9 @@ const Hero: FC<HeroProps> = (props) => {
         to=""
         onClick={() => {
           props.setCurrentPath?.("about");
+          window.scrollTo(100,100);
+          console.log('r');
+          
         }}
       >
         kn<span>o</span>w m<span>o</span>re

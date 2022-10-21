@@ -1,6 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { FC, Suspense } from "react";
+import React, { FC, Suspense, useEffect } from "react";
 import { SubTitle } from "../../Global.styles";
 import { AboutWrap, BallIcon, GamingIcon, HelmetIcon, Hobbies, Hobby } from "./About.styles";
 
@@ -14,7 +14,7 @@ const About: FC = () => {
   return (
     <AboutWrap>
       <SubTitle>
-        R<span>o</span>botized
+        T<span>r</span>ained
       </SubTitle>
       <p>
         Hi, my name is Younes El miri and I'm a web developer trainee at <b>Becode</b>. <b>Becode</b> provides
@@ -23,7 +23,7 @@ const About: FC = () => {
         <b>Typescript</b>, <b>GraphQL</b>, <b>ThreeJS</b> and more.
       </p>
       <SubTitle>
-        G<span>e</span>ek
+        P<span>a</span>ssion
       </SubTitle>
       <p>
         I'm passionate about web coding. I continue to learn coding by myself

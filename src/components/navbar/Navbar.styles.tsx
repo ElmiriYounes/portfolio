@@ -1,9 +1,52 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { flexCenter, primaryColor } from "../../Global.styles";
 
-interface ItemProps{
-    hovered?:boolean
-    active?:boolean
+const BurgerStyle = css`
+  height: 2px;
+  width: 70%;
+  background-color: ${primaryColor};
+  position: absolute;
+  transition: all 0.3s linear;
+`;
+
+interface IBurger {
+  open?: boolean;
+}
+
+export const BurgerTop = styled.div<IBurger>`
+  ${BurgerStyle}
+  width: ${(props) => (props.open ? `13px` : "70%")};
+  transform: ${(props) =>
+    props.open
+      ? `translateY(-5px) translateX(-5px) rotate(45deg)`
+      : `translateY(-8px) translateX(0) rotate(0)`};
+`;
+
+export const BurgerMiddle = styled.div<IBurger>`
+  ${BurgerStyle}
+  transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
+`;
+
+export const BurgerBottom = styled.div<IBurger>`
+  ${BurgerStyle}
+  width: ${(props) => (props.open ? `13px` : "70%")};
+  transform: ${(props) =>
+    props.open
+      ? `translateY(5.5px) translateX(5.5px) rotate(45deg)`
+      : `translateY(8px) translateX(0) rotate(0)`};
+`;
+
+export const MenuBurger = styled.div`
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  position: relative;
+  ${flexCenter}
+`;
+
+interface ItemProps {
+  hovered?: boolean;
+  active?: boolean;
 }
 
 export const Item = styled.li<ItemProps>`
@@ -12,12 +55,32 @@ export const Item = styled.li<ItemProps>`
   z-index: 0;
   color: white;
   padding: 10px 20px;
-  
+
+  &:first-child {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    &:first-child {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -40px;
+      width: auto;
+      padding: 0;
+
+      &:hover::before {
+        width: 0;
+      }
+    }
+  }
+
   &:last-child {
     padding-right: inherit;
   }
 
-  &:hover::before{
+  &:hover::before {
     width: 50px;
   }
 
@@ -34,11 +97,23 @@ export const Item = styled.li<ItemProps>`
   }
 `;
 
-export const Items = styled.ul`
+export const Items = styled.ul<IBurger>`
   ${flexCenter}
+  position: relative;
 
-  .active::before{
+  .active::before {
     width: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 162px;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: ${(props) => (props.open ? "0" : "-162px")};
+    transition: all 0.5s ease-in-out;
+    padding: 20px;
+    background-color: ${primaryColor};
   }
 `;
 
@@ -55,5 +130,7 @@ export const Nav = styled.nav`
   width: 100%;
   padding: 20px;
   ${flexCenter}
+  position: relative;
+  z-index: 99;
   justify-content: space-between;
 `;

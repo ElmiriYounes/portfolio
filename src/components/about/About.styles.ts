@@ -66,13 +66,6 @@ export const Hobby = styled.div`
     content: "";
     z-index: -1;
     transition: all 0.5s ease-out;
-    animation: radius 5s 1s ease-in-out infinite alternate;
-
-    @keyframes radius {
-        to{
-            border-radius: 30% 70% 70% 30% / 60% 40% 60% 40%;
-        }
-    }
   }
 
   &:hover::before {

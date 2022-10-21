@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import React, { FC, Suspense } from "react";
 import About from "../components/about/About";
 import Hero from "../components/hero/Hero";
+import Projects from "../components/projects/Projects";
 import Skills from "../components/skills/Skills";
 import Skin from "../components/threejs/Skin";
 import { Container, Page } from "../Global.styles";
@@ -22,10 +23,11 @@ const View: FC<ViewProps> = (props) => {
         )}
         {props.currentPath === "about" && <About />}
         {props.currentPath === "skills" && <Skills />}
+        {props.currentPath === "projects" && <Projects />}
         <RobotWrap>
           <Robot className="canvas" style={{ height: "600px" }}>
             <ambientLight intensity={0.5} />
-            <directionalLight position={[10, 20, 5]} intensity={1} />
+            <directionalLight position={[-20, 1, 20]} intensity={1} />
             <Suspense fallback={null}>
               <Skin />
             </Suspense>

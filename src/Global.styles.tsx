@@ -24,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 1px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
-    cursor: none !important;
 
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none; /* iOS Safari */
@@ -47,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     background-color: rgb(48,43,78);
+    cursor: none;
     /* overflow-anchor: none; // désactiver ancrage du défilement (scroll anchoring) */
   }
 
