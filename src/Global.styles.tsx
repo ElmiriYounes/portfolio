@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 import Roboto from "./fonts/Roboto/Roboto-Regular.ttf";
-import background from './assets/images/Background.png'
+import background from "./assets/images/Background.png";
 
 export const flexCenter = css`
   display: flex;
@@ -8,7 +8,9 @@ export const flexCenter = css`
   align-items: center;
 `;
 
-export const primaryColor = "rgb(182, 12, 60)";
+export const primaryColor:string = "rgb(182, 12, 60)";
+
+export const secondaryColor:string = "rgb(48,43,78)";
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -46,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     width: 100%;
     height: 100%;
-    background-color: rgb(48,43,78);
+    background-color: ${secondaryColor};
     cursor: none;
     /* overflow-anchor: none; // désactiver ancrage du défilement (scroll anchoring) */
   }
@@ -78,7 +80,7 @@ const stretching = keyframes`
   to{
 
   }
-`
+`;
 
 export const SubTitle = styled.h2`
   font-size: 2rem;
@@ -89,7 +91,7 @@ export const SubTitle = styled.h2`
   color: white;
 
   @media screen and (max-width: 498px) {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   span {
@@ -99,7 +101,7 @@ export const SubTitle = styled.h2`
 
     @media screen and (max-width: 498px) {
       font-size: 1.5rem;
-  }
+    }
   }
 
   &::before {

@@ -5,8 +5,16 @@ import Hero from "../components/hero/Hero";
 import Projects from "../components/projects/Projects";
 import Skills from "../components/skills/Skills";
 import { Younes3D } from "../components/threejs/Younes3D";
-import { Container, Page } from "../Global.styles";
-import { Robot, Dialog, RobotWrap } from "./View.styles";
+import { Container, Page, primaryColor } from "../Global.styles";
+import {
+  Robot,
+  Dialog,
+  RobotWrap,
+  CodeWrap,
+  CodeLine,
+  Code,
+  SpanPerspective,
+} from "./View.styles";
 
 interface ViewProps {
   currentPath: string;
@@ -15,6 +23,34 @@ interface ViewProps {
 }
 
 const View: FC<ViewProps> = (props) => {
+  interface IPos {
+    top: number;
+    left: number;
+  }
+
+  interface IRot {
+    x: number;
+    y: number;
+  }
+
+  const positionsSpan: IPos[] = [
+    { top: 0, left: 0 },
+    { top: 0, left: 33.33 },
+    { top: 0, left: 66.66 },
+    { top: 50, left: 0 },
+    { top: 50, left: 33.33 },
+    { top: 50, left: 66.66 },
+  ];
+
+  const rotatesSpan: IRot[] = [
+    { x: -20, y: 20 },
+    { x: -20, y: 0 },
+    { x: -20, y: -20 },
+    { x: 20, y: 20 },
+    { x: 20, y: 0 },
+    { x: 20, y: -20 },
+  ];
+
   return (
     <Page>
       <Container>
@@ -38,10 +74,36 @@ const View: FC<ViewProps> = (props) => {
             />
           </Robot>
           <Dialog>
-            <p>
-              Looking <br />
-              for a job
-            </p>
+            {positionsSpan.map((position, index) => (
+              <SpanPerspective
+                key={index}
+                top={position.top}
+                left={position.left}
+                rotateX={rotatesSpan[index].x}
+                rotateY={rotatesSpan[index].y}
+              />
+            ))}
+            <CodeWrap>
+              <CodeLine>
+                <Code>const </Code>
+                <Code color={primaryColor}>findAJob </Code>
+                <Code>= </Code>
+                <Code color="yellow">{"() "}</Code>
+                <Code>{"=> "}</Code>
+                <Code color="yellow">{"{"}</Code>
+              </CodeLine>
+              <CodeLine>
+                <Code color={primaryColor}>{"while("}</Code>
+                <Code>{"!"}</Code>
+                <Code>{"success"}</Code>
+                <Code color={primaryColor}>{") "}</Code>
+                <Code color={primaryColor}>{"try"}</Code>
+                <Code color="yellow">{"()"}</Code>
+              </CodeLine>
+              <CodeLine>
+                <Code color="yellow">{"}"}</Code>
+              </CodeLine>
+            </CodeWrap>
           </Dialog>
         </RobotWrap>
       </Container>
