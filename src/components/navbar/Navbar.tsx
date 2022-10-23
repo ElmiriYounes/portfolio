@@ -45,7 +45,7 @@ const Navbar: FC<NavProps> = (props) => {
   return (
     <Container>
       <Nav>
-        <Logo>
+        <Logo onClick={()=>{props.setCurrentPath("home")}}>
           Y<span>o</span>unes
         </Logo>
         <Items opened={props.open}>

@@ -20,8 +20,8 @@ const IconEmail = styled(MdAlternateEmail)`
 const EmailWrap = styled.div`
   ${flexCenter}
   position: fixed;
-  right: 40px;
-  bottom: 20px;
+  right: 20px;
+  bottom: 10px;
   z-index: 999;
   transition: all 0.5s linear;
 
