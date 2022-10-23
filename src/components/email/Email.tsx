@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { flexCenter, primaryColor } from "../../Global.styles";
 import { MdAlternateEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const IconEmail = styled(MdAlternateEmail)`
   font-size: 3rem;
@@ -20,9 +21,9 @@ const IconEmail = styled(MdAlternateEmail)`
 const EmailWrap = styled.div`
   ${flexCenter}
   position: fixed;
-  right: 20px;
+  right: 30px;
   bottom: 10px;
-  z-index: 999;
+  z-index: 1;
   transition: all 0.5s linear;
 
   &::before {
@@ -56,9 +57,11 @@ const EmailWrap = styled.div`
 
 const Email = () => {
   return (
-    <EmailWrap>
-      <IconEmail />
-    </EmailWrap>
+    <a href="mailto:elmiri.younes@hotmail.com">
+      <EmailWrap>
+        <IconEmail />
+      </EmailWrap>
+    </a>
   );
 };
 

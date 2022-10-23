@@ -1,7 +1,4 @@
-import React, {
-  FC,
-  useEffect,
-} from "react";
+import React, { FC, useEffect } from "react";
 import { Container } from "../../Global.styles";
 import {
   BurgerBottom,
@@ -23,14 +20,13 @@ interface NavProps {
 }
 
 const Navbar: FC<NavProps> = (props) => {
-
   const handleClick = () => {
     props.setOpen(!props.open);
   };
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768){
+      if (window.innerWidth > 768) {
         props.open === true && props.setOpen(false);
       }
     };
@@ -45,24 +41,26 @@ const Navbar: FC<NavProps> = (props) => {
   return (
     <Container>
       <Nav>
-        <Logo onClick={()=>{props.setCurrentPath("home")}}>
+        <Logo
+          onClick={() => {
+            props.setCurrentPath("home");
+          }}
+        >
           Y<span>o</span>unes
         </Logo>
+        <MenuBurger onClick={handleClick}>
+          <BurgerTop opened={props.open} />
+          <BurgerMiddle opened={props.open} />
+          <BurgerBottom opened={props.open} />
+        </MenuBurger>
         <Items opened={props.open}>
-          <Item>
-            <MenuBurger onClick={handleClick}>
-              <BurgerTop opened={props.open} />
-              <BurgerMiddle opened={props.open} />
-              <BurgerBottom opened={props.open} />
-            </MenuBurger>
-          </Item>
           {NavbarItems.map((item, index) => (
             <Item
               key={index}
               className={`${props.currentPath === item.path ? "active" : null}`}
               onClick={() => {
                 props.setCurrentPath(item.path);
-                handleClick();
+                window.innerWidth <= 768 && handleClick();
               }}
             >
               {item.title}

@@ -37,11 +37,16 @@ export const BurgerBottom = styled.div<IBurger>`
 `;
 
 export const MenuBurger = styled.div`
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  position: relative;
-  ${flexCenter}
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    ${flexCenter}
+  }
 `;
 
 interface ItemProps {
@@ -56,24 +61,8 @@ export const Item = styled.li<ItemProps>`
   color: white;
   padding: 10px 20px;
 
-  &:first-child {
-    display: none;
-  }
-
   @media screen and (max-width: 768px) {
     width: 100%;
-    &:first-child {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: -40px;
-      width: auto;
-      padding: 0;
-
-      &:hover::before {
-        width: 0;
-      }
-    }
   }
 
   &:last-child {
@@ -106,11 +95,12 @@ export const Items = styled.ul<IBurger>`
   }
 
   @media screen and (max-width: 768px) {
-    width: 162px;
+    width: 100%;
+    height: 100vh;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: ${(props) => (props.opened ? "0" : "-162px")};
+    right: ${(props) => (props.opened ? "0" : "-100%")};
     transition: all 1s ease-in-out;
     padding: 20px;
     background-color: ${primaryColor};
@@ -123,7 +113,7 @@ export const Logo = styled.div`
   font-weight: bold;
   color: white;
 
-  span{
+  span {
     font-size: 2.5rem;
     color: ${primaryColor};
   }
@@ -131,6 +121,7 @@ export const Logo = styled.div`
 
 export const Nav = styled.nav`
   width: 100%;
+  height: 100px;
   padding: 20px;
   ${flexCenter}
   position: relative;

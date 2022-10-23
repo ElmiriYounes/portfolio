@@ -90,6 +90,7 @@ export const Links = styled.div`
     margin-right: 20px;
     border-radius: 30px;
     transition: all 0.5s ease-out;
+    border: 2px solid ${primaryColor};
 
     @media screen and (max-width: 768px) {
       font-size: 0.8rem;
