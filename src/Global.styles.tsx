@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 1px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    cursor: none;
 
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none; /* iOS Safari */

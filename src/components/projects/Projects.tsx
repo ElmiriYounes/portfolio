@@ -17,12 +17,11 @@ const Projects = () => {
   const sliderContainerRef = useRef<HTMLDivElement>(null);
   const cardProjectRef = useRef<HTMLDivElement>(null);
   const [slider, setSlider] = useState<number | undefined>();
-  const [indexSlider, setIndexSlider] = useState<number>(0);
   const [translate, setTranslate] = useState<number>(0);
 
   useEffect(() => {
     setSlider(sliderContainerRef.current?.offsetWidth);
-
+ 
     const handleResize = () => {
       setSlider(sliderContainerRef.current?.offsetWidth);
       setTranslate(0);
@@ -83,8 +82,8 @@ const Projects = () => {
                 <img src={project.img} alt="project gif" />
               </ProjectGif>
               <Links>
-                <a href={project.github} target="_blank">Github</a>
-                <a href={project.demo} target="_blank">Demo</a>
+                <a href={project.github} target="_blank" rel="noreferrer">Github</a>
+                <a href={project.demo} target="_blank" rel="noreferrer">Demo</a>
               </Links>
             </ProjectWrap>
           ))}

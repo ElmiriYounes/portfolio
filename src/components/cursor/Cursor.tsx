@@ -12,6 +12,7 @@ const Circle = styled.div`
   z-index: 2000;
   transition: all 0.3s;
   pointer-events: none;
+  display: none;
 `;
 
 const MoveCursor = styled.div`
@@ -23,6 +24,7 @@ const MoveCursor = styled.div`
   transition: all 0s;
   pointer-events: none;
   ${flexCenter}
+  display: none;
 
   .iconTarget {
     color: #ffe900;
@@ -32,30 +34,33 @@ const MoveCursor = styled.div`
 const Cursor: FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
-  const [display, setDisplay] = useState<string>("visible");
+  const [display, setDisplay] = useState<string>("none");
 
   useEffect(() => {
-    cursorRef.current!.style.visibility = display;
-    circleRef.current!.style.visibility = display;
+    cursorRef.current!.style.display = display;
+    circleRef.current!.style.display = display;
   }, [display]);
 
   const handleMove = (event: MouseEvent) => {
-
     if (navigator.maxTouchPoints === 0 || navigator.maxTouchPoints === 256) {
-      document.body.style.cursor = 'none';
-      setDisplay('visible')
+      document.body.style.cursor = "none !important";
+      setDisplay("flex");
       cursorRef.current!.style.left = `calc(${event.pageX}px - 10px)`;
       cursorRef.current!.style.top = `calc(${event.pageY}px - 10px)`;
       circleRef.current!.style.left = `calc(${event.pageX}px - 30px)`;
       circleRef.current!.style.top = `calc(${event.pageY}px - 30px)`;
     } else {
-      setDisplay("hidden");
-      document.body.style.cursor = 'auto';
+      setDisplay("none");
+      document.body.style.cursor = "auto";
     }
   };
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+    };
   }, []);
 
   return (

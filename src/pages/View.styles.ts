@@ -4,18 +4,17 @@ import { Canvas } from "@react-three/fiber";
 
 export const Robot = styled(Canvas)`
   position: absolute;
-  width: 350px !important;
+  width: 450px !important;
 `;
 
 export const Dialog = styled.div`
   ${flexCenter}
-  display: none;
   position: absolute;
   z-index: -1;
   background-color: ${primaryColor};
   width: max-content;
-  left: -50px;
-  top: -20px;
+  left: 20px;
+  top: 0;
   padding: 20px 20px 50px 20px;
   -webkit-clip-path: polygon(
     0% 0%,

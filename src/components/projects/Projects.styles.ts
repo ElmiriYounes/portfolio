@@ -63,12 +63,18 @@ export const ProjectGif = styled.div`
   height: 100%;
   overflow: hidden;
   border-radius: 20px;
+  ${flexCenter}
+  color: white;
 
   img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: fill;
+
+    @media screen and (max-width: 768px) {
+      object-fit: cover;
+  }
   }
 `;
 
@@ -107,11 +113,11 @@ export const ProjectWrap = styled.div`
   position: relative;
 
   @media screen and (max-width: 420px) {
-    width: 225px;
+    width: 100%;
   }
 
   @media screen and (min-width: 421px) and (max-width: 767px) {
-    width: 350px;
+    width: 80%;
   }
 
   @media screen and (max-width: 768px) {
@@ -161,6 +167,7 @@ export const ProjectsSlider = styled.div`
   @media screen and (max-width: 768px) {
     outline: none;
     height: 100%;
+    overflow-x: unset;
   }
 `;
 

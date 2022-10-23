@@ -1,5 +1,4 @@
-import React, { FC, Suspense, useState, useEffect } from "react";
-import { Section } from "../../Global.styles";
+import React, { FC } from "react";
 import {
   ArrowLongRight,
   GithubIcon,
@@ -8,14 +7,11 @@ import {
   Socials,
   Title,
 } from "./Hero.styles";
-import { OrbitControls, PerspectiveCamera, Html } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import { Link } from "react-router-dom";
-import { BsLinkedin, BsGithub } from "react-icons/bs";
-import Skin from "../threejs/Skin";
 
 interface HeroProps {
   setCurrentPath?: (path: string) => void;
+  setOpen?: (open: boolean) => void;
 }
 
 const Hero: FC<HeroProps> = (props) => {
@@ -34,19 +30,17 @@ const Hero: FC<HeroProps> = (props) => {
         to=""
         onClick={() => {
           props.setCurrentPath?.("about");
-          window.scrollTo(100,100);
-          console.log('r');
-          
+          props.setOpen?.(false)
         }}
       >
         kn<span>o</span>w m<span>o</span>re
         <ArrowLongRight />
       </Link>
       <Socials>
-        <a href="https://www.linkedin.com/in/youneselmiri" target="_blank">
+        <a href="https://www.linkedin.com/in/youneselmiri" target="_blank" rel="noreferrer">
           <LinkedinIcon />
         </a>
-        <a href="https://github.com/ElmiriYounes?tab=repositories" target="_blank">
+        <a href="https://github.com/ElmiriYounes?tab=repositories" target="_blank" rel="noreferrer">
           <GithubIcon />
         </a>
       </Socials>

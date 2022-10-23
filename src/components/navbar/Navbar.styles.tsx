@@ -10,28 +10,28 @@ const BurgerStyle = css`
 `;
 
 interface IBurger {
-  open?: boolean;
+  opened?: boolean;
 }
 
 export const BurgerTop = styled.div<IBurger>`
   ${BurgerStyle}
-  width: ${(props) => (props.open ? `13px` : "70%")};
+  width: ${(props) => (props.opened ? `13px` : "70%")};
   transform: ${(props) =>
-    props.open
+    props.opened
       ? `translateY(-5px) translateX(-5px) rotate(45deg)`
       : `translateY(-8px) translateX(0) rotate(0)`};
 `;
 
 export const BurgerMiddle = styled.div<IBurger>`
   ${BurgerStyle}
-  transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
+  transform: ${(props) => (props.opened ? "rotate(-45deg)" : "rotate(0)")};
 `;
 
 export const BurgerBottom = styled.div<IBurger>`
   ${BurgerStyle}
-  width: ${(props) => (props.open ? `13px` : "70%")};
+  width: ${(props) => (props.opened ? `13px` : "70%")};
   transform: ${(props) =>
-    props.open
+    props.opened
       ? `translateY(5.5px) translateX(5.5px) rotate(45deg)`
       : `translateY(8px) translateX(0) rotate(0)`};
 `;
@@ -110,8 +110,8 @@ export const Items = styled.ul<IBurger>`
     flex-direction: column;
     position: absolute;
     top: 0;
-    right: ${(props) => (props.open ? "0" : "-162px")};
-    transition: all 0.5s ease-in-out;
+    right: ${(props) => (props.opened ? "0" : "-162px")};
+    transition: all 1s ease-in-out;
     padding: 20px;
     background-color: ${primaryColor};
   }
@@ -119,10 +119,13 @@ export const Items = styled.ul<IBurger>`
 
 export const Logo = styled.div`
   ${flexCenter}
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
 
-  img {
-    height: 100%;
-    width: 150px;
+  span{
+    font-size: 2.5rem;
+    color: ${primaryColor};
   }
 `;
 

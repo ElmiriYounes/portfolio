@@ -9,16 +9,21 @@ import { hostname } from "./datas/Variables";
 const App: FC = () => {
   
   const [currentPath, setCurrentPath] = useState<string>("home");
+  const [open, setOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    document.body.scrollTo({top: 0, left:0, behavior: 'smooth'})
+  }, [open, currentPath]);
 
   return (
     <Router>
-      <Navbar setCurrentPath={setCurrentPath} currentPath={currentPath} />
+      <Navbar setCurrentPath={setCurrentPath} currentPath={currentPath} open={open} setOpen={setOpen} />
       <Cursor />
       <Routes>
         <Route
           path={hostname}
           element={
-            <View currentPath={currentPath} setCurrentPath={setCurrentPath} />
+            <View currentPath={currentPath} setCurrentPath={setCurrentPath} setOpen={setOpen} />
           }
         />
         {/* <Route path="/about-me" element={<About />} /> */}

@@ -12,9 +12,7 @@ const scaling = keyframes`
 
 const styleSocialIcons = css`
   ${flexCenter}
-  margin-right: 40px;
   color: #cccccc;
-  cursor: pointer;
   font-size: 1.5rem;
   transition: all 0.3s ease-out;
 
@@ -53,7 +51,14 @@ export const GithubIcon = styled(BsGithub)`
 export const Socials = styled.div`
   ${flexCenter}
   margin-top: 50px;
-  justify-content: flex-start;
+
+  a{
+    ${flexCenter}
+  }
+
+  a:first-child{
+    margin-right: 40px;
+  }
 `;
 
 const showing = keyframes`

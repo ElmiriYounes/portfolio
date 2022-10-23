@@ -1,9 +1,6 @@
 import React, {
   FC,
-  MouseEvent,
-  MouseEventHandler,
   useEffect,
-  useState,
 } from "react";
 import { Container } from "../../Global.styles";
 import {
@@ -16,29 +13,26 @@ import {
   MenuBurger,
   Nav,
 } from "./Navbar.styles";
-import logo from "../../assets/images/logo.png";
 import { NavbarItems } from "../../datas/NavbarItems";
-import { Link } from "react-router-dom";
 
 interface NavProps {
   setCurrentPath: (path: string) => void;
+  setOpen: (open: boolean) => void;
+  open: boolean;
   currentPath: string;
 }
 
 const Navbar: FC<NavProps> = (props) => {
-  const [open, setOpen] = useState<boolean>(false);
 
   const handleClick = () => {
-    setOpen((o) => !o);
+    props.setOpen(!props.open);
   };
 
   useEffect(() => {
-    console.log(open);  
-  }, [open]);
-
-  useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768 && open) setOpen(false);
+      if (window.innerWidth > 768){
+        props.open === true && props.setOpen(false);
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -46,20 +40,20 @@ const Navbar: FC<NavProps> = (props) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [props]);
 
   return (
     <Container>
       <Nav>
         <Logo>
-          <img src={logo} alt="Logo" />
+          Y<span>o</span>unes
         </Logo>
-        <Items open={open}>
+        <Items opened={props.open}>
           <Item>
             <MenuBurger onClick={handleClick}>
-              <BurgerTop open={open} />
-              <BurgerMiddle open={open} />
-              <BurgerBottom open={open} />
+              <BurgerTop opened={props.open} />
+              <BurgerMiddle opened={props.open} />
+              <BurgerBottom opened={props.open} />
             </MenuBurger>
           </Item>
           {NavbarItems.map((item, index) => (
@@ -69,7 +63,6 @@ const Navbar: FC<NavProps> = (props) => {
               onClick={() => {
                 props.setCurrentPath(item.path);
                 handleClick();
-                window.scrollTo(0, 0);
               }}
             >
               {item.title}
