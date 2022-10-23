@@ -70,7 +70,7 @@ const View: FC<ViewProps> = (props) => {
             <OrbitControls
               position={[5, 5, 5]}
               enableZoom={false}
-              enableRotate={true}
+              enableRotate={false}
             />
           </Robot>
           <Dialog>

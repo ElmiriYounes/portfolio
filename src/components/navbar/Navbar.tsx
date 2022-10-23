@@ -59,7 +59,7 @@ const Navbar: FC<NavProps> = (props) => {
             <OrbitControls
               position={[5, 5, 5]}
               enableZoom={false}
-              enableRotate={true}
+              enableRotate={false}
             />
           </Avatar>
         </Logo>

@@ -128,9 +128,17 @@ export const Logo = styled.div`
   color: white;
   position: relative;
 
+  @media screen and (max-width: 360px) {
+    font-size: 1.5rem;
+  }
+
   span {
     font-size: 2.5rem;
     color: ${primaryColor};
+
+    @media screen and (max-width: 360px) {
+    font-size: 1.5rem;
+  }
   }
 `;
 
