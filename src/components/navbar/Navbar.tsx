@@ -7,13 +7,13 @@ import {
   Item,
   Items,
   Logo,
-  Logos,
+  Avatar,
   MenuBurger,
   Nav,
 } from "./Navbar.styles";
 import { NavbarItems } from "../../datas/NavbarItems";
 import { OrbitControls } from "@react-three/drei";
-import { LogoYounes } from "../threejs/LogoYounes";
+import { YounesIdle } from "../threejs/YounesIdle";
 
 interface NavProps {
   setCurrentPath: (path: string) => void;
@@ -44,25 +44,25 @@ const Navbar: FC<NavProps> = (props) => {
   return (
     <Container>
       <Nav>
-      <Logos className="canvas">
+        <Logo
+          onClick={() => {
+            props.setCurrentPath("home");
+          }}
+        >
+          Y<span>o</span>unes
+          <Avatar className="canvas">
             <ambientLight intensity={0.5} />
             <directionalLight position={[-20, 1, 20]} intensity={1} />
             <Suspense fallback={null}>
-              <LogoYounes />
+              <YounesIdle />
             </Suspense>
             <OrbitControls
               position={[5, 5, 5]}
               enableZoom={false}
               enableRotate={true}
             />
-          </Logos>
-        {/* <Logo
-          onClick={() => {
-            props.setCurrentPath("home");
-          }}
-        >
-          Y<span>o</span>unes
-        </Logo> */}
+          </Avatar>
+        </Logo>
         <MenuBurger onClick={handleClick}>
           <BurgerTop opened={props.open} />
           <BurgerMiddle opened={props.open} />
