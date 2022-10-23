@@ -61,7 +61,7 @@ const View: FC<ViewProps> = (props) => {
         {props.currentPath === "skills" && <Skills />}
         {props.currentPath === "projects" && <Projects />}
         <RobotWrap>
-          <Robot className="canvas" style={{ height: "600px" }}>
+          <Robot className="canvas">
             <ambientLight intensity={0.5} />
             <directionalLight position={[-20, 1, 20]} intensity={1} />
             <Suspense fallback={null}>

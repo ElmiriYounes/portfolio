@@ -1,5 +1,13 @@
 import styled, { css } from "styled-components";
 import { flexCenter, primaryColor } from "../../Global.styles";
+import { Canvas } from "@react-three/fiber";
+
+export const Logos = styled(Canvas)`
+  position: absolute;
+  right: 0;
+  width: 450px !important;
+  height: 580px !important;
+`;
 
 const BurgerStyle = css`
   height: 2px;

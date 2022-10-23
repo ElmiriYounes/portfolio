@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, Suspense, useEffect } from "react";
 import { Container } from "../../Global.styles";
 import {
   BurgerBottom,
@@ -7,10 +7,13 @@ import {
   Item,
   Items,
   Logo,
+  Logos,
   MenuBurger,
   Nav,
 } from "./Navbar.styles";
 import { NavbarItems } from "../../datas/NavbarItems";
+import { OrbitControls } from "@react-three/drei";
+import { LogoYounes } from "../threejs/LogoYounes";
 
 interface NavProps {
   setCurrentPath: (path: string) => void;
@@ -41,13 +44,25 @@ const Navbar: FC<NavProps> = (props) => {
   return (
     <Container>
       <Nav>
-        <Logo
+      <Logos className="canvas">
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[-20, 1, 20]} intensity={1} />
+            <Suspense fallback={null}>
+              <LogoYounes />
+            </Suspense>
+            <OrbitControls
+              position={[5, 5, 5]}
+              enableZoom={false}
+              enableRotate={true}
+            />
+          </Logos>
+        {/* <Logo
           onClick={() => {
             props.setCurrentPath("home");
           }}
         >
           Y<span>o</span>unes
-        </Logo>
+        </Logo> */}
         <MenuBurger onClick={handleClick}>
           <BurgerTop opened={props.open} />
           <BurgerMiddle opened={props.open} />
