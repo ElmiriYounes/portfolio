@@ -7,7 +7,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function YounesIdle(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/younesIdle.glb')
+  const { nodes, materials, animations } = useGLTF(`${hostname}younesIdle.glb`)
   const { actions } = useAnimations(animations, group)
 
   useEffect(()=>{
@@ -34,4 +34,4 @@ export function YounesIdle(props) {
   )
 }
 
-useGLTF.preload('/younesIdle.glb')
+useGLTF.preload(`${hostname}younesIdle.glb`)
