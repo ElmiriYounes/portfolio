@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { flexCenter, primaryColor } from "../../Global.styles";
 import { MdAlternateEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const IconEmail = styled(MdAlternateEmail)`
   font-size: 3rem;
@@ -18,6 +18,15 @@ const IconEmail = styled(MdAlternateEmail)`
   }
 `;
 
+export const Bounding = styled(motion.div)`
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  background-color: white;
+  pointer-events: none;
+  z-index: -1;
+`;
+
 const EmailWrap = styled.div`
   ${flexCenter}
   position: fixed;
@@ -25,40 +34,25 @@ const EmailWrap = styled.div`
   bottom: 10px;
   z-index: 1;
   transition: all 0.5s linear;
-
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    border-radius: 50%;
-    background-color: white;
-    animation: bounding 3s 2s ease-out infinite;
-    pointer-events: none;
-    opacity: 0;
-
-    @keyframes bounding {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      66% {
-        transform: scale(1.5);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1.5);
-        opacity: 0;
-      }
-    }
-  }
 `;
 
 const Email = () => {
   return (
     <a href="mailto:elmiri.younes@hotmail.com">
       <EmailWrap>
+        <Bounding
+          initial={{
+            opacity: 1,
+            width: "80%",
+            height: "80%",
+          }}
+          animate={{
+            opacity: 0,
+            width: "150%",
+            height: "150%",
+          }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
         <IconEmail />
       </EmailWrap>
     </a>

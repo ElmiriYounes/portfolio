@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter, primaryColor } from "../Global.styles";
+import { flexCenter } from "../Global.styles";
 import { Canvas } from "@react-three/fiber";
 
 export const Robot = styled(Canvas)`

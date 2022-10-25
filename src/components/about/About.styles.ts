@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { flexCenter, primaryColor, SubTitle } from "../../Global.styles";
 import { IoLogoGameControllerB } from "react-icons/io";
-import { BiFootball } from "react-icons/bi";
 import { GiFullMotorcycleHelmet, GiSoccerBall } from "react-icons/gi";
 
 const StylesIcons = css`

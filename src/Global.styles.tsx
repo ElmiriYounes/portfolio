@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css, keyframes } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import Roboto from "./fonts/Roboto/Roboto-Regular.ttf";
 import background from "./assets/images/Background.png";
 
@@ -73,12 +73,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 30px;
     color: #b8b8b8;
     display: inline-block;
-  }
-`;
-
-const stretching = keyframes`
-  to{
-
   }
 `;
 

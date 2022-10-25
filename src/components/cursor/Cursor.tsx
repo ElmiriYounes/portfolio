@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { flexCenter, primaryColor } from "../../Global.styles";
+import { flexCenter } from "../../Global.styles";
 import { BiTargetLock } from "react-icons/bi";
 
 const Circle = styled.div`

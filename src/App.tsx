@@ -1,6 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Canvas, extend } from "@react-three/fiber";
 import Navbar from "./components/navbar/Navbar";
 import Cursor from "./components/cursor/Cursor";
 import View from "./pages/View";

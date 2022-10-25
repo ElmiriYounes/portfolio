@@ -1,6 +1,4 @@
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import React, { FC, Suspense, useEffect } from "react";
+import React, { FC } from "react";
 import { SubTitle } from "../../Global.styles";
 import { AboutWrap, BallIcon, GamingIcon, HelmetIcon, Hobbies, Hobby } from "./About.styles";
 
