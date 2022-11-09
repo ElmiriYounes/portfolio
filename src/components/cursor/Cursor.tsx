@@ -10,7 +10,7 @@ const Circle = styled.div`
   border-radius: 50%;
   position: absolute;
   z-index: 2000;
-  transition: all 0.3s;
+  transition: all 0.05s ease-out;
   pointer-events: none;
   display: none;
 `;
