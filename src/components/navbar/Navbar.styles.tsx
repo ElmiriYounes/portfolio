@@ -102,7 +102,7 @@ export const Items = styled.ul<IBurger>`
     position: fixed;
     top: 0;
     right: ${(props) => (props.opened ? "0" : "-100%")};
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
     padding: 20px;
     background-color: ${primaryColor};
   }

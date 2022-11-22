@@ -42,14 +42,21 @@ const Cursor: FC = () => {
   }, [display]);
 
   const handleMove = (event: MouseEvent) => {
+    const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("a");
     if (navigator.maxTouchPoints === 0 || navigator.maxTouchPoints === 256) {
-      document.body.style.cursor = "none !important";
+      document.body.style.cursor = "none";
+      links.forEach((el: HTMLAnchorElement) => {
+        el.style.cursor = "none";
+      });
       setDisplay("flex");
       cursorRef.current!.style.left = `calc(${event.pageX}px - 10px)`;
       cursorRef.current!.style.top = `calc(${event.pageY}px - 10px)`;
       circleRef.current!.style.left = `calc(${event.pageX}px - 30px)`;
       circleRef.current!.style.top = `calc(${event.pageY}px - 30px)`;
     } else {
+      links.forEach((el: HTMLAnchorElement) => {
+        el.style.cursor = "pointer";
+      });
       setDisplay("none");
       document.body.style.cursor = "auto";
     }

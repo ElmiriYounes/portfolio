@@ -101,11 +101,6 @@ export const projects: IProjects[] = [
     demo: 'https://elmiriyounes.github.io/Project-RandomQuote-React-NodeJS/',
   },
   {
-    img: cookie,
-    github: 'https://github.com/ElmiriYounes/Project-CookieClicker-VanillaJavascript',
-    demo: 'https://elmiriyounes.github.io/Project-CookieClicker-VanillaJavascript/',
-  },
-  {
     img: startup,
     github: 'https://github.com/ElmiriYounes/Project-Startup24-React',
     demo: 'https://elmiriyounes.github.io/Project-Startup24-React/',

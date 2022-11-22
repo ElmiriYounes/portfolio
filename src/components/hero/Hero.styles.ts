@@ -5,6 +5,7 @@ import { CgArrowLongRight } from "react-icons/cg";
 
 const scaling = keyframes`
   to{
+    -webkit-transform: scale(1) rotate(0);
     transform: scale(1) rotate(0);
     opacity: 1;
   }
@@ -14,10 +15,12 @@ const styleSocialIcons = css`
   ${flexCenter}
   color: #cccccc;
   font-size: 1.5rem;
+  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 
   &:hover {
     color: ${primaryColor};
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
 `;
@@ -25,26 +28,32 @@ const styleSocialIcons = css`
 export const ArrowLongRight = styled(CgArrowLongRight)`
   position: absolute;
   right: -40px;
+  -webkit-transform: translateX(0);
   transform: translateX(0);
   opacity: 1;
   ${flexCenter};
   font-size: 1.5rem;
   pointer-events: none;
   color: ${primaryColor};
+  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 `;
 
 export const LinkedinIcon = styled(BsLinkedin)`
   ${styleSocialIcons}
+  -webkit-transform: scale(0) rotate(720deg);
   transform: scale(0) rotate(720deg);
   opacity: 0;
+  -webkit-animation: ${scaling} 0.3s 1.7s ease-out forwards;
   animation: ${scaling} 0.3s 1.7s ease-out forwards;
 `;
 
 export const GithubIcon = styled(BsGithub)`
   ${styleSocialIcons}
+  -webkit-transform: scale(0) rotate(720deg);
   transform: scale(0) rotate(720deg);
   opacity: 0;
+  -webkit-animation: ${scaling} 0.3s 2s ease-out forwards;
   animation: ${scaling} 0.3s 2s ease-out forwards;
 `;
 
@@ -63,6 +72,7 @@ export const Socials = styled.div`
 
 const showing = keyframes`
   to{
+    -webkit-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
   }
@@ -74,16 +84,19 @@ export const Title = styled.h1`
   span {
     display: block;
     font-size: 4rem;
+    -webkit-transform: translateX(50px);
     transform: translateX(50px);
     opacity: 0;
   }
 
   span:nth-child(1) {
+    -webkit-animation: ${showing} 0.3s 0.5s ease-out forwards;
     animation: ${showing} 0.3s 0.5s ease-out forwards;
   }
 
   span:nth-child(2) {
     color: ${primaryColor};
+    -webkit-animation: ${showing} 0.3s 0.8s ease-out forwards;
     animation: ${showing} 0.3s 0.8s ease-out forwards;
   }
 
@@ -118,6 +131,7 @@ export const Jumbotron = styled.div`
     left: -120px;
     width: 100px;
     background-color: ${primaryColor};
+    -webkit-animation: stretching 0.5s ease-out forwards;
     animation: stretching 0.5s ease-out forwards;
 
     @media screen and (max-width: 767px) {
@@ -144,8 +158,10 @@ export const Jumbotron = styled.div`
 
   p {
     margin-top: 20px;
+    -webkit-transform: translateX(50px);
     transform: translateX(50px);
     opacity: 0;
+    -webkit-animation: ${showing} 0.3s 1.1s ease-out forwards;
     animation: ${showing} 0.3s 1.1s ease-out forwards;
   }
 
@@ -155,9 +171,12 @@ export const Jumbotron = styled.div`
     letter-spacing: 2px;
     position: relative;
     ${flexCenter};
+    -webkit-transition: all 0.3s ease-out;
+    -webkit-transform: translateX(50px);
     transition: all 0.3s ease-out;
     transform: translateX(50px);
     opacity: 0;
+    -webkit-animation: ${showing} 0.3s 1.4s ease-out forwards;
     animation: ${showing} 0.3s 1.4s ease-out forwards;
 
     @media screen and (max-width: 320px) {
@@ -175,6 +194,7 @@ export const Jumbotron = styled.div`
     }
 
     &:hover ${ArrowLongRight} {
+      -webkit-transform: translate(10px);
       transform: translate(10px);
       opacity: 1;
     }

@@ -6,6 +6,9 @@ import { GiFullMotorcycleHelmet, GiSoccerBall } from "react-icons/gi";
 const StylesIcons = css`
   font-size: 5rem;
   color: white;
+  -webkit-transform: scale(0);
+  -webkit-animation: scaling 0.5s 0.5s ease-out forwards;
+  -webkit-transition: all 0.5s ease-out;
   transform: scale(0);
   animation: scaling 0.5s 0.5s ease-out forwards;
   transition: all 0.5s ease-out;
