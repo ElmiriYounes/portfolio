@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { skills } from "../../datas/Variables";
 import {
-  BackgroundColor,
   Icon,
   IconWrap,
   SkillsWrap,

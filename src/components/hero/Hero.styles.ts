@@ -61,11 +61,11 @@ export const Socials = styled.div`
   ${flexCenter}
   margin-top: 50px;
 
-  a{
+  a {
     ${flexCenter}
   }
 
-  a:first-child{
+  a:first-child {
     margin-right: 40px;
   }
 `;
@@ -172,12 +172,13 @@ export const Jumbotron = styled.div`
     position: relative;
     ${flexCenter};
     -webkit-transition: all 0.3s ease-out;
-    -webkit-transform: translateX(50px);
     transition: all 0.3s ease-out;
-    transform: translateX(50px);
+    -webkit-transform: scale(0.8) rotate(0);
+    transform: scale(0.8) rotate(0);
     opacity: 0;
-    -webkit-animation: ${showing} 0.3s 1.4s ease-out forwards;
-    animation: ${showing} 0.3s 1.4s ease-out forwards;
+
+    -webkit-animation: ${scaling} 0.3s 1.4s ease-out forwards;
+    animation: ${scaling} 0.3s 1.4s ease-out forwards;
 
     @media screen and (max-width: 320px) {
       font-size: 1.2rem;

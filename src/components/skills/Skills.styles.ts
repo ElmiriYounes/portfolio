@@ -4,29 +4,13 @@ import { flexCenter, primaryColor } from "../../Global.styles";
 export const TitleSkill = styled.span`
   position: absolute;
   color: white;
-  perspective: 1000px;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: rotateX(180deg) translateZ(-50px);
-  -webkit-transition: all 1s ease-out;
-  transform-style: preserve-3d;
-  transform: rotateX(180deg) translateZ(-50px);
-  transition: all 1s ease-out;
-  z-index: 0;
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px) translateZ(-50px);
+  opacity: 0;
+  -webkit-transition: all 0.5s 0s ease-out;
+  transition: all 0.5s 0s ease-out;
+  z-index: -1;
   text-align: center;
-  display: block;
-`;
-
-export const BackgroundColor = styled.div`
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: blue;
-  position: absolute;
-  -webkit-transform: rotateX(0);
-  -webkit-transition: 1s ease-out;
-  transform: rotateX(0);
-  transition: 1s ease-out;
-  background-color: ${primaryColor};
 `;
 
 export const Icon = styled.div`
@@ -49,9 +33,10 @@ export const IconWrap = styled.div`
   transform: rotateX(0);
   transition: 1s ease-out;
   transform-style: preserve-3d;
-  position: absolute;
   -webkit-perspective: 1000px;
   perspective: 1000px;
+  position: relative;
+  z-index: 0;
   background-color: ${primaryColor};
 `;
 
@@ -59,6 +44,7 @@ export const SkillWrap = styled.div`
   width: 120px;
   height: 120px;
   position: relative;
+  z-index: 0;
   perspective: 1000px;
   -webkit-perspective: 1000px;
   ${flexCenter}
@@ -84,17 +70,14 @@ export const SkillWrap = styled.div`
   &:hover ${IconWrap} {
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
-  }
-
-  &:hover ${BackgroundColor} {
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
+    z-index: -1;
   }
 
   &:hover ${TitleSkill} {
-    -webkit-transform: rotateX(0) translateZ(0);
-    transform: rotateX(0) translateZ(0);
-    z-index: 1;
+    -webkit-transform: translateY(0) translateZ(20px);
+    transform: translateY(0) translateZ(20px);
+    opacity: 1;
+    z-index: 0;
   }
 `;
 

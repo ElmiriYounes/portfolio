@@ -87,27 +87,27 @@ interface IProjects {
 export const projects: IProjects[] = [
   {
     img: hangman,
-    github: 'https://github.com/ElmiriYounes/Project-Hangman-VanillaJavascript',
-    demo: 'https://elmiriyounes.github.io/Project-Hangman-VanillaJavascript/',
+    github: "https://github.com/ElmiriYounes/Project-Hangman-VanillaJavascript",
+    demo: "https://elmiriyounes.github.io/Project-Hangman-VanillaJavascript/",
   },
   {
     img: threejs,
-    github: 'https://github.com/ElmiriYounes/ThreeJS',
-    demo: 'https://elmiriyounes.github.io/ThreeJS/',
+    github: "https://github.com/ElmiriYounes/ThreeJS",
+    demo: "https://elmiriyounes.github.io/ThreeJS/",
   },
   {
     img: quote,
-    github: 'https://github.com/ElmiriYounes/Project-RandomQuote-React-NodeJS',
-    demo: 'https://elmiriyounes.github.io/Project-RandomQuote-React-NodeJS/',
+    github: "https://github.com/ElmiriYounes/Project-RandomQuote-React-NodeJS",
+    demo: "https://elmiriyounes.github.io/Project-RandomQuote-React-NodeJS/",
   },
   {
     img: startup,
-    github: 'https://github.com/ElmiriYounes/Project-Startup24-React',
-    demo: 'https://elmiriyounes.github.io/Project-Startup24-React/',
+    github: "https://github.com/ElmiriYounes/Project-Startup24-React",
+    demo: "https://elmiriyounes.github.io/Project-Startup24-React/",
   },
   {
     img: social,
-    github: 'https://github.com/ElmiriYounes/Amstramgram',
-    demo: 'https://elmiriyounes.github.io/Amstramgram/',
-  }
+    github: "https://github.com/ElmiriYounes/Amstramgram",
+    demo: "https://elmiriyounes.github.io/Amstramgram/",
+  },
 ];
